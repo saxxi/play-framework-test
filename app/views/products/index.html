@@ -1,0 +1,13 @@
+<h1>Products (total ${total_prods})</h1>
+
+<div>
+
+<ul>
+#{ list items:prods, as:'prod' }
+    *{ @{Products.edit(prod.id)} }*
+    <li><a href="/products/${prod.title.slugify()}/edit">${prod.title} - ${prod.qty}</a></li>
+#{/list}
+</ul>
+
+
+</div>

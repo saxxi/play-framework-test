@@ -1,0 +1,32 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                                       Application.index
+
+
+
+
+# RESTful routes
+GET     /products/                              Products.index       # products
+POST    /products/                              Products.create
+GET     /products/new                           Products.rest_new    # new_product
+GET     /products/{prod_slug}/edit              Products.edit        # edit_product
+GET     /products/{id}                          Products.show        # product
+PUT     /products/{id}                          Products.update
+DELETE  /products/{id}                          Products.destroy
+
+
+
+
+
+
+# Ignore favicon requests
+GET     /favicon.ico                            404
+
+# Map static resources from the /app/public folder to the /public path
+GET     /public/                                staticDir:public
+
+# Catch all
+*       /{controller}/{action}                  {controller}.{action}
