@@ -3,9 +3,12 @@
 # ~~~~
 
 # Home page
-GET     /                                       Application.index
+GET     /                                       Products.index
 
 
+
+# Import CRUD routes
+*      /admin                                   module:crud
 
 
 # RESTful routes
